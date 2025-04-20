@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepRoots/about</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <!-- Display logo here -->
+    <div class="header">
+        <img src="img/treeLogo.png" alt="Tree Logo" class="logo">
+        <p>Deep Roots</p>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="topnav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <!-- Dropdown Menu-->
+        <div class="dropdown">
+            <button class="dropbtn">Services</button>
+            <div class="dropdown-content">
+                <a href="#service1">Lawn Mowing</a>
+                <a href="#service2">Hedges</a>
+                <a href="#service3">Floral</a>
+                <a href="#service4">Weed Control</a>
+            </div>
+        </div>
+        <a href="#contact">Contact</a>
+        <a href="#pick">Pick a Service</a>
+    </div>
+    <!-- About Us -->
+    <main class="about-page">
+        <section class="about-hero fade-in">
+            <h1>Our Mission</h1>
+            <p>What began as a single mower and a dream quickly blossomed into a thriving gardening business built on trust, quality, and green love. From hedges to flowers, every project is personal.</p>
+        </section>
+        <section class="about-story fade-in">
+            <h2>Our Story</h2>
+            <p>Founded in 2010, Deep Roots started as a small family business. Over the years, we have grown into a trusted name in lawn care, serving our community with dedication and passion.</p>
+            </section>
+        <section class="about-values fade-in">
+            <h2>What Deep Roots Stand for</h2>
+            <ul class="value-list">
+                <li>Honest, reliable Service</li>
+                <li>Love for Nature</li>
+                <li>Personalized Lawn Care</li>
+                <li>Eco-Friendly Practices</li>
+            </ul>
+        </section>
+        <!-- Team Section -->
+        <section class="about-team fade-in">
+            <h2>Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="img/Team Member(1).jpg" alt="Team Member 1">
+                    <h3>Mikel Sherman</h3>
+                    <p>Founder & Lead Gardener</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/Team Member(2).jpg" alt="Team Member 2">
+                    <h3>Sarah Johnson</h3>
+                    <p>Floral Specialist</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/Team Member(3).jpg" alt="Team Member 3">
+                    <h3>Hayden Ball</h3>
+                    <p>Hedges Specialist</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/Team Member(4).jpg" alt="Team Member 4">
+                    <h3>Jordan Lee</h3>
+                    <p>Lawn Care Expert</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/Team Member(5).jpg" alt="Team Member 5">
+                    <h3>Jamie Taylor</h3>
+                    <p>Customer Relations</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/Team Member(6).jpg" alt="Team Member 6">
+                    <h3>Alex Morgan</h3>
+                    <p>Weed Control Specialist</p>
+                </div>
+            </div>
+            
+        </section>
+        <section class="about-contact fade-in">
+            <p>Ready to join the Deep Roots family?</p>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </section>
+    </main>
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+    
+        const appearOptions = {
+          threshold: 0.3,
+          rootMargin: "0px 0px -50px 0px"
+        };
+    
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          });
+        }, appearOptions);
+    
+        faders.forEach(fader => {
+          appearOnScroll.observe(fader);
+        });
+      </script>
+</body>
+</html>
